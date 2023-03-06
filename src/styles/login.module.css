@@ -1,0 +1,31 @@
+.login-layout {
+    display: flex;
+    min-height: 100dvh;
+
+    container-type: inline-size;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    padding: 2rem 0;
+    /* background-color: var(--color-white); */
+}
+
+.image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    width: 50%;
+    height: 100dvh;
+    position: sticky;
+    top: 0;
+}
+
+@container (inline-size < 768px) {
+    .image {
+        width: 0px;
+    }
+}
