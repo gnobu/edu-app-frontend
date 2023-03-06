@@ -693,18 +693,17 @@ label {
 @media (prefers-color-scheme: dark) {
   :root {
     --color-dark-white: #bfbcbf;
-    --color-light-black: #363636;
+    --color-light-black: #26261f;
     --color-light-black: #1d1d1d;
 
-    --color-black: #1c1c1c;
-    --color-black: #111111;
-    --color-white: #fdfcfd;
+    --color-black: #151515;
     --color-white: var(--color-dark-white);
+    --color-white: #fdfcfd;
     --color-grey: #A3A1A5;
     --color-bg-grey: #f4f2f7;
     --color-bg-grey: var(--color-light-black);
 
-    --color-accent: hsl(249, 100%, 68%);
+    --color-accent: hsl(249, 100%, 70%);
     --color-accent-hover: #7156facf;
     --color-border: #1c1c1c66;
     --color-border: #fffafa66;
