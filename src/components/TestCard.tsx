@@ -14,7 +14,7 @@ export default function TestCard({ test }: { test: Test }) {
 
 
   return (
-    <article ref={testCard} className="content bg-white course-theme medium bg-grey f-s-3 flex-col f-gap-1">
+    <article ref={testCard} className="content course-theme medium bg-grey f-s-3 flex-col f-gap-1">
       <div className="flex f-gap-1">
         <div className="content no-wrap test-block bg-course col-white flex-col centered-flex">
           <span className="blk f-w-6 f-s-4">{test.course.courseCode}</span>
