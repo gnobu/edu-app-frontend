@@ -3,3 +3,4 @@ Frontend for Edu-app - where lecturers can create tests and students can take th
 This project is built with:
 - React.js on Vite
 - TypeScript
+- CSS
