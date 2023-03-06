@@ -687,10 +687,46 @@ label {
   box-shadow: 0px 0px 15px #b5b4b4;
 }
 
+body[data-theme='dark'] {
+  --color-dark-white: #bfbcbf;
+  --color-light-black: #26261f;
+  --color-light-black: #1d1d1d;
+
+  --color-black: #151515;
+  --color-white: var(--color-dark-white);
+  --color-white: #fdfcfd;
+  --color-grey: #A3A1A5;
+  --color-bg-grey: #f4f2f7;
+  --color-bg-grey: var(--color-light-black);
+
+  --color-accent: hsl(249, 100%, 70%);
+  --color-accent-hover: #7156facf;
+  --color-border: #1c1c1c66;
+  --color-border: #fffafa66;
+
+  color: var(--color-dark-white);
+  background-color: var(--color-light-black);
+}
+
+body[data-theme='dark'] .col-black {
+  color: var(--color-dark-white);
+}
+
+body[data-theme='dark'] .bg-white {
+  background-color: var(--color-black);
+}
+
+body[data-theme='dark'] .bg-grey {
+  background-color: var(--color-light-black);
+}
+
+body[data-theme='dark']  .header-shadow {
+  box-shadow: 0px 0px 15px var(--color-light-black);
+}
 
 
 /* MEDIA QUERIES & RESIZING */
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
     --color-dark-white: #bfbcbf;
     --color-light-black: #26261f;
@@ -727,17 +763,4 @@ label {
   .header-shadow {
     box-shadow: 0px 0px 15px var(--color-light-black);
   }
-
-  /* FIRST ATTEMPT */
-  /* :root {
-    --color-white: #464646;
-    --color-dark-white: #bfbcbf;
-    --color-bg-grey: var(--color-black);
-    color: var(--color-dark-white);
-    background-color: var(--color-black);
-  }
-
-  .col-black {
-    color: var(--color-dark-white);
-  } */
-}
+} */

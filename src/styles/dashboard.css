@@ -54,15 +54,15 @@ button.hamburger:hover {
     color: inherit;
 }
 
-.theme-picker:not([data-picked]) {
+.theme-picker:not(.active) {
     background-color: transparent;
 }
 
-.theme-picker:not([data-picked]):hover {
+.theme-picker:not(.active):hover {
     background-color: var(--color-grey);
 }
 
-.theme-picker[data-picked] {
+.theme-picker.active {
     background-color: var(--color-black);
     color: var(--color-white);
 }
@@ -97,6 +97,7 @@ button.hamburger:hover {
     padding-left: .6rem;
     transition: justify-content 500ms ease, display 500ms ease;
 }
+
 /* END OF SIDEBAR */
 
 
@@ -164,7 +165,7 @@ button.hamburger:hover {
 @container sidebar (inline-size < 200px) {
 
     .full,
-    .theme-picker:not([data-picked]) {
+    .theme-picker:not(.active)  {
         display: none;
     }
 

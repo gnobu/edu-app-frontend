@@ -3,14 +3,19 @@ import { Link, NavLink, useLocation } from "react-router-dom"
 import "../styles/dashboard.css"
 import IconText from "./IconText"
 import noAvatar from "../assets/images/no-avatar-2.svg"
+import useTheme from "../hooks/useTheme"
 
 export default function Sidebar() {
+    const [theme, setTheme] = useTheme()
+
     const sidebar = useRef<HTMLElement>(null)
     function toggleSidebar() {
         sidebar.current?.toggleAttribute('aria-collapsed')
     }
+
     const { pathname } = useLocation()
     const isOverview = /(\/teacher)$/.test(pathname)
+    
     return (
         <header ref={sidebar} className="sidebar desktop sticky-top flex-col bg-white col-grey">
             <button onClick={toggleSidebar} className="hamburger bg-white col-grey">
@@ -51,10 +56,14 @@ export default function Sidebar() {
             <section className="f-s-4">
                 <hr className="m-blk-5 w-100" />
                 <div className="nav-link m-blk-4 bg-grey col-black flex flex-btwn">
-                    <button data-picked className="small theme-picker">
+                    <button
+                        onClick={() => setTheme('light')}
+                        className={`small theme-picker ${theme === 'light' ? 'active' : ''}`}>
                         <IconText src={"/src/assets/icons/sun.svg#img"} element={<span className='full'>Light</span>} size={'xs'} />
                     </button>
-                    <button className="small theme-picker">
+                    <button
+                        onClick={() => setTheme('dark')}
+                        className={`small theme-picker ${theme === 'dark' ? 'active' : ''}`}>
                         <IconText src={"/src/assets/icons/moon.svg#img"} element={<span className='full'>Dark</span>} size={'xs'} />
                     </button>
                 </div>
