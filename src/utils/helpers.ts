@@ -161,3 +161,12 @@ export const courses: Course[] = [
         theme: 'RED',
     },
 ]
+
+export function getCourses(){
+    console.log(courses)
+    return courses
+}
+
+export function getTests(){
+    return tests
+}
