@@ -169,3 +169,7 @@ export function getCourses() {
 export async function getTests() {
     return tests
 }
+
+export async function getTest(id: string | undefined) {
+    return tests.filter(test => test.id === id).at(0)
+}

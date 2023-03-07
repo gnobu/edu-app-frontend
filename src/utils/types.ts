@@ -12,6 +12,8 @@ export interface ErrorResponse {
     statusText: string;
 }
 
+// export type LoaderResponse<T> = Awaited<ReturnType<T>>
+
 export type Test = {
     id: string;
     course: Pick<Course, 'id' | 'courseCode' | 'courseTitle' | 'theme'>;

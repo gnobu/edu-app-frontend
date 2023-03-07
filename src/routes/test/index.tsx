@@ -4,7 +4,7 @@ export default function TestForm() {
     return (
         <div className="container flex centered-flex">
             <div className="content bg-sec medium">
-                <form action="">
+                <form action="" className="flex-col centered-flex f-gap-1">
                     <h2>Enter the test code</h2>
                     <div className="form-group">
                         <div className="form-group-inline">

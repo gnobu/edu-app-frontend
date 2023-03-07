@@ -15,7 +15,7 @@ export default function TestCard({ test }: { test: Test }) {
 
 
   return (
-    <Link to={`teacher/drafts/:${test.id}`} ref={testCard} className="content course-theme col-pry medium bg-tert f-s-3 flex-col f-gap-1">
+    <Link to={`/teacher/drafts/${test.id}`} ref={testCard} className="content course-theme col-pry medium bg-tert f-s-3 flex-col f-gap-1">
       <div className="flex f-gap-1">
         <div className="content no-wrap test-block bg-course col-white flex-col centered-flex">
           <span className="blk f-w-6 f-s-4">{test.course.courseCode}</span>
