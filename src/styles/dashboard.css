@@ -6,8 +6,7 @@
     padding: 1rem;
     outline: 1px solid var(--color-border);
 
-    container-type: inline-size;
-    container-name: sidebar;
+    container: sidebar / inline-size;
 
     transition: width 250ms ease;
 }
@@ -25,7 +24,7 @@
     min-width: 30px;
     border-radius: 50%;
     border: 1px solid var(--color-border);
-    transition: transform 250ms ease;
+    transition: transform 500ms ease;
 }
 
 button.hamburger:hover {
@@ -42,12 +41,12 @@ button.hamburger:hover {
 }
 
 .sidebar a.nav-link:not(.selected):hover {
-    background-color: var(--color-bg-grey);
+    background-color: var(--bg-tertiary);
 }
 
 .sidebar .nav-link.selected {
     color: var(--color-accent);
-    background-color: var(--color-bg-grey);
+    background-color: var(--bg-tertiary);
 }
 
 .theme-picker {
@@ -59,38 +58,18 @@ button.hamburger:hover {
 }
 
 .theme-picker:not(.active):hover {
-    background-color: var(--color-grey);
+    background-color: var(--bg-secondary);
 }
 
 .theme-picker.active {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--bg-secondary);
+    color: var(--color-primary);
 }
 
 .badge {
     padding: .25em .5em;
     border-radius: var(--border-radius-2);
-    width: fit-content;
-}
-
-.bg-course {
-    background-color: var(--color-course);
-}
-
-.bg-course-alpha {
-    background-color: var(--color-course-alpha);
-}
-
-.badge.bg-course-alpha {
-    background-color: var(--color-course-alpha1);
-}
-
-.col-course {
-    color: var(--color-course);
-}
-
-.col-course-alpha {
-    color: var(--color-course-alpha);
+    width: max-content;
 }
 
 .padding-full {
@@ -105,7 +84,26 @@ button.hamburger:hover {
     --rgb-course: 0, 19, 86;
     --color-course: rgb(var(--rgb-course));
     --color-course-alpha: rgba(var(--rgb-course), 0.3);
-    --color-course-alpha1: rgba(var(--rgb-course), 0.1);
+    opacity: .8;
+}
+.course-theme:hover {
+    opacity: 1;
+}
+
+.bg-course {
+    background-color: var(--color-course);
+}
+
+.bg-course-alpha {
+    background-color: var(--color-course-alpha);
+}
+
+.col-course {
+    color: var(--color-course);
+}
+
+.col-course-alpha {
+    color: var(--color-course-alpha);
 }
 
 .course-grid {
@@ -163,9 +161,8 @@ button.hamburger:hover {
 }
 
 @container sidebar (inline-size < 200px) {
-
     .full,
-    .theme-picker:not(.active)  {
+    .theme-picker.active  {
         display: none;
     }
 
@@ -173,8 +170,8 @@ button.hamburger:hover {
         transform: rotate(180deg);
     }
 
-    .nav-link:has(.theme-picker) {
-        background-color: var(--color-black)
+    .nav-link .theme-picker {
+        background-color: inherit;
     }
 
     .theme-picker {

@@ -17,8 +17,8 @@ export default function Sidebar() {
     const isOverview = /(\/teacher)$/.test(pathname)
     
     return (
-        <header ref={sidebar} className="sidebar desktop sticky-top flex-col bg-white col-grey">
-            <button onClick={toggleSidebar} className="hamburger bg-white col-grey">
+        <header ref={sidebar} className="sidebar desktop sticky-top flex-col bg-sec col-tert">
+            <button onClick={toggleSidebar} className="hamburger bg-sec col-tert">
                 <IconText src={"/src/assets/icons/left.svg#img"} size={"xs"} />
             </button>
             <section className="h-100">
@@ -55,7 +55,7 @@ export default function Sidebar() {
             </section>
             <section className="f-s-4">
                 <hr className="m-blk-5 w-100" />
-                <div className="nav-link m-blk-4 bg-grey col-black flex flex-btwn">
+                <div className="nav-link m-blk-4 bg-tert col-pry flex flex-btwn">
                     <button
                         onClick={() => setTheme('light')}
                         className={`small theme-picker ${theme === 'light' ? 'active' : ''}`}>
@@ -76,7 +76,7 @@ export default function Sidebar() {
                     <div className="flex f-gap-1">
                         <img src={noAvatar} alt="user picture" height={36} width={36} />
                         <div className="flex-col full">
-                            <span className="f-s-3 f-w-7 col-black">John Monday</span>
+                            <span className="f-s-3 f-w-7 col-pry">John Monday</span>
                             <span className="f-s-3">University of Uyo</span>
                         </div>
                     </div>

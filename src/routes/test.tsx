@@ -9,7 +9,7 @@ export default function StudentRoute() {
     const [children, setChildren] = useState<JSX.Element | null>(null)
     return (
         <div className="page">
-            <Header classNames="bg-white header-shadow" >
+            <Header classNames="bg-sec header-shadow" >
                 <h2>
                     <Link to='/' className='flex f-gap-p5 f-al-center'>
                         <img src={`/src/assets/icons/logo.svg`} alt="App logo" />

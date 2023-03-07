@@ -8,7 +8,7 @@ export default function OAuth() {
 
             <div className="form-group">
                 <button className="outline form-element">
-                    <span className='flex f-gap-p5 f-al-center col-black'>
+                    <span className='flex f-gap-p5 f-al-center col-pry'>
                         <img src={googleSVG} width={18} height={18} />
                         Continue with Google
                     </span>
@@ -16,7 +16,7 @@ export default function OAuth() {
             </div>
             <div className="form-group">
                 <button className="outline form-element">
-                    <span className={`flex f-gap-p5 f-al-center col-black`}>
+                    <span className={`flex f-gap-p5 f-al-center col-pry`}>
                         <img src={mcsSVG} width={18} height={18} />
                         Continue with Microsoft
                     </span>

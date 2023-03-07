@@ -12,7 +12,7 @@ import Overview from './routes/teacher/overview'
 import LandingPage from './routes/LandingPage'
 import Calendar from './routes/teacher/calendar'
 import Courses from './routes/teacher/courses'
-import Drafts from './routes/teacher/drafts'
+import Drafts, { loader as draftsLoader } from './routes/teacher/drafts'
 import Profile from './routes/teacher/profile'
 
 const router = createBrowserRouter(
@@ -32,7 +32,7 @@ const router = createBrowserRouter(
           <Route path='overview' element={<Overview />} />
           <Route path='calendar' element={<Calendar />} />
           <Route path='courses' element={<Courses />} />
-          <Route path='drafts' element={<Drafts />} />
+          <Route path='drafts' loader={draftsLoader} element={<Drafts />} />
           <Route path='profile' element={<Profile />} />
         </Route>
       </Route>

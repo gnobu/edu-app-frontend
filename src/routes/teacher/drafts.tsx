@@ -1,9 +1,16 @@
+import { useLoaderData } from "react-router-dom"
 import Header from "../../components/Header"
 import IconText from "../../components/IconText"
 import TestCard from "../../components/TestCard"
-import { tests } from "../../utils/helpers"
+import { getTests } from "../../utils/helpers"
+
+export const loader = async () => {
+  const tests = await getTests()
+  return { tests }
+}
 
 export default function Drafts() {
+  const { tests } = useLoaderData() as Awaited<ReturnType<typeof loader>>
   return (
     <>
       <Header>
@@ -14,10 +21,12 @@ export default function Drafts() {
         </div>
       </Header>
       <section className="container">
-        <div className="content bg-white draft-grid m-blk-5">
-          {tests.filter(({ completed }) => !completed).map(test => {
-            return <TestCard key={test.id} test={test} />
-          })}
+        <div className="content bg-sec draft-grid m-blk-5">
+          {tests.length
+            ? tests.filter(({ completed }) => !completed).map(test => {
+              return <TestCard key={test.id} test={test} />
+            })
+            : null}
         </div>
       </section>
     </>

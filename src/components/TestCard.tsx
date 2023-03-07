@@ -1,4 +1,5 @@
-import React, { useEffect, useRef } from "react"
+import { useEffect, useRef } from "react"
+import { Link } from "react-router-dom"
 import { THEMES } from "../utils/themes"
 import { Test } from "../utils/types"
 import IconText from "./IconText"
@@ -7,14 +8,14 @@ export default function TestCard({ test }: { test: Test }) {
   const updatedTime = new Date(test.updatedAt).getTime()
   const relativeTime = getRelativeTime(updatedTime)
 
-  const testCard = useRef<HTMLElement>(null)
+  const testCard = useRef<HTMLAnchorElement>(null)
   useEffect(() => {
     testCard.current?.style.setProperty('--rgb-course', `${THEMES[test.course.theme]}`)
   }, [])
 
 
   return (
-    <article ref={testCard} className="content course-theme medium bg-grey f-s-3 flex-col f-gap-1">
+    <Link to={`teacher/drafts/:${test.id}`} ref={testCard} className="content course-theme col-pry medium bg-tert f-s-3 flex-col f-gap-1">
       <div className="flex f-gap-1">
         <div className="content no-wrap test-block bg-course col-white flex-col centered-flex">
           <span className="blk f-w-6 f-s-4">{test.course.courseCode}</span>
@@ -40,7 +41,7 @@ export default function TestCard({ test }: { test: Test }) {
         </button>
         <button className="outline small">Start</button>
       </div>
-    </article>
+    </Link>
   )
 }
 

@@ -162,11 +162,10 @@ export const courses: Course[] = [
     },
 ]
 
-export function getCourses(){
-    console.log(courses)
+export function getCourses() {
     return courses
 }
 
-export function getTests(){
+export async function getTests() {
     return tests
 }

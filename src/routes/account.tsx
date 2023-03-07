@@ -9,7 +9,7 @@ import { Link } from "react-router-dom"
 export default function AccountRoute() {
     return (
         <div className={`page account-page`}>
-            <Header classNames="bg-white header-shadow" >
+            <Header classNames="bg-sec header-shadow" >
                 <h2>
                     <Link to='/' className='flex f-gap-p5 f-al-center'>
                         <img src={`/src/assets/icons/logo.svg`} alt="App logo" />

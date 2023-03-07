@@ -9,7 +9,7 @@ export default function UserCard({ iconSrc, userType }: { iconSrc: string, userT
                     <img src={iconSrc} alt={`${userType} icon`} width={50} height={50} />
                 </div>
             </div>
-            <div className='card-text bg-white'>{userType}</div>
+            <div className='card-text bg-sec'>{userType}</div>
         </Link>
     )
 }

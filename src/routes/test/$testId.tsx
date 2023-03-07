@@ -4,7 +4,7 @@ import "../../styles/question.css"
 
 export default function TestPage() {
     let content =
-        <div className="content bg-white medium">
+        <div className="content bg-sec medium">
             <form action="">
                 <div className="intro centered-text">
                     <h2>You are about to take {`MEE 415`} test.</h2>
@@ -20,7 +20,7 @@ export default function TestPage() {
             </form>
         </div>
 
-    content = <div className="content bg-white medium">
+    content = <div className="content bg-sec medium">
         <h2 className="centered-text">The test will begin shortly</h2>
         <ul className="m-blk-0">
             <span className={`instruction centered-text m-bl-0`}>Instructions</span>
