@@ -140,6 +140,7 @@ ul {
 [type="time"],
 [type="url"],
 [type="color"],
+select,
 textarea {
   display: flex;
   align-items: center;
@@ -152,7 +153,12 @@ textarea {
   background-color: transparent;
   color: inherit;
   transition: box-shadow 200ms, border-color 50ms ease-out,
-    background-color 50ms ease-out, color 50ms ease-out;
+  background-color 50ms ease-out, color 50ms ease-out;
+}
+
+option {
+  padding: .7rem;
+  background-color: transparent;
 }
 
 :is([type="text"],
