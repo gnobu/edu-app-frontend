@@ -6,7 +6,10 @@ import noAvatar from "../assets/images/no-avatar-2.svg"
 import useTheme from "../hooks/useTheme"
 
 export default function Sidebar() {
-    const [theme, setTheme] = useTheme()
+    const { theme, defaultTheme, setTheme } = useTheme()
+    console.log(theme, defaultTheme)
+    const isLightTheme = theme === 'light' || !theme && defaultTheme === 'light'
+    const isDarkTheme = theme === 'dark' || !theme && defaultTheme === 'dark'
 
     const sidebar = useRef<HTMLElement>(null)
     function toggleSidebar() {
@@ -15,7 +18,7 @@ export default function Sidebar() {
 
     const { pathname } = useLocation()
     const isOverview = /(\/teacher)$/.test(pathname)
-    
+
     return (
         <header ref={sidebar} className="sidebar desktop sticky-top flex-col bg-sec col-tert">
             <button onClick={toggleSidebar} className="hamburger bg-sec col-tert">
@@ -58,12 +61,12 @@ export default function Sidebar() {
                 <div className="nav-link m-blk-4 bg-tert col-pry flex flex-btwn">
                     <button
                         onClick={() => setTheme('light')}
-                        className={`small theme-picker ${theme === 'light' ? 'active' : ''}`}>
+                        className={`small theme-picker ${isLightTheme ? 'active' : ''}`}>
                         <IconText src={"/src/assets/icons/sun.svg#img"} element={<span className='full'>Light</span>} size={'xs'} />
                     </button>
                     <button
                         onClick={() => setTheme('dark')}
-                        className={`small theme-picker ${theme === 'dark' ? 'active' : ''}`}>
+                        className={`small theme-picker ${isDarkTheme ? 'active' : ''}`}>
                         <IconText src={"/src/assets/icons/moon.svg#img"} element={<span className='full'>Dark</span>} size={'xs'} />
                     </button>
                 </div>
