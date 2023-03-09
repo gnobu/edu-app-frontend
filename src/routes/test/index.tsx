@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 export default function TestForm() {
     return (
         <div className="container flex centered-flex">
-            <div className="content bg-white medium">
-                <form action="">
+            <div className="content bg-sec medium">
+                <form action="" className="flex-col centered-flex f-gap-1">
                     <h2>Enter the test code</h2>
                     <div className="form-group">
                         <div className="form-group-inline">

@@ -9,19 +9,13 @@
     padding: 1rem;
 }
 
-/* .value {
-    background-color: var(--color-bg-grey);
-} */
-
 [aria-selected] {
     animation: selected 1000ms forwards;
     transition: background-color 1000ms ease-in-out, color 1000ms ease-in;
 }
 
 .label {
-    min-width: 56px;
-    /* background-color: var(--color-accent);
-    color: var(--color-white); */
+    min-width: 65px;
 }
 
 .option {
@@ -39,15 +33,7 @@
     flex-grow: 1;
 }
 
-.instruction {
-    font-size: 1.25rem;
-    font-weight: 500;
-    /* color: var(--color-warn); */
-    text-transform: uppercase;
-}
-
 .modal {
-    /* background-color: var(--color-black); */
     background-image: linear-gradient(to bottom, #6146eaab, #9747ff80);
     width: 90%;
     max-width: 600px;
@@ -57,7 +43,7 @@
 }
 
 .email-field {
-    outline: .5px solid var(--color-white);
+    outline: .5px solid var(--color-primary);
     border-radius: var(--border-radius-2);
     background-color: #1D1D1D39;
     padding: 2px;
@@ -104,8 +90,7 @@
 
 @keyframes selected {
     from {
-        background-color: var(--color-bg-grey);
-        color: var(--color-white);
+        background-color: var(--color-bg-tert);
     }
 
     to {

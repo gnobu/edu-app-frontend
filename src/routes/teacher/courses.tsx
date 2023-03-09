@@ -1,7 +1,7 @@
-import CourseCard from "../../components/CourseCard"
-import Header from "../../components/Header"
-import IconText from "../../components/IconText"
-import { courses } from "../../utils/helpers"
+import CourseCard from "~/components/CourseCard"
+import Header from "~/components/Header"
+import IconText from "~/components/IconText"
+import { courses } from "~/utils/helpers"
 
 export default function Courses() {
   return (

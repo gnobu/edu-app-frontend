@@ -1,0 +1,61 @@
+.quest_col {
+    width: min-content;
+}
+
+.opt_col {
+    width: 300px;
+    min-width: 300px;
+
+    container: optbar / inline-size;
+    transition: width 250ms ease, min-width 250ms ease;
+}
+
+.opt_col[aria-collapsed] {
+    width: 1rem;
+    min-width: 1rem;
+}
+
+button.toggler {
+    position: absolute;
+    top: 31%;
+    left: -16px;
+    width: 32px;
+    height: 32px;
+    min-width: 30px;
+    border-radius: 50%;
+    border: 1px solid var(--color-border);
+    transition: transform 500ms ease;
+}
+
+button.toggler:hover {
+    opacity: 1;
+}
+
+.quest_boxes {
+    height: 500px;
+}
+
+.quest_box {
+    width: 150px;
+    height: 100px;
+    border: 1px solid var(--color-tertiary);
+    border-radius: var(--border-radius-2);
+    opacity: .8;
+}
+
+.quest_box:hover,
+.quest_box.active {
+    opacity: 1;
+}
+
+.content:has(.quest_box):hover,
+.content:has(.quest_box).active {
+    cursor: pointer;
+    background-color: var(--bg-tertiary);
+}
+
+@container optbar (inline-size < 200px) {
+    .toggler {
+        transform: rotate(180deg);
+    }
+}

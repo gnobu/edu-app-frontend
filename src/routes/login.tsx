@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
-import OAuth from "../components/OAuth"
-import loginStyle from "../styles/login.module.css"
-import loginImage from "/src/assets/images/login-bg-mid.png"
+import OAuth from "~/components/OAuth"
+import loginStyle from "~/styles/login.module.css"
+import loginImage from "~/src/assets/images/login-bg-mid.png"
 
 export default function LoginForm() {
   return (
@@ -12,12 +12,11 @@ export default function LoginForm() {
       </section>
       <section className={`${loginStyle.main}`}>
         <div className="container">
-          <h2 className="centered-text">
-            <Link to='/'>
-              Edu
+          <form action="" className="flex-col centered-flex f-gap-1">
+            <Link to='/' className='f-gap-p5 centered-flex'>
+              <img src={`/src/assets/icons/logo.svg`} alt="App logo" />
+              <span className="f-s-6 f-w-7">Edu</span>
             </Link>
-          </h2>
-          <form action="">
             <h3 className="centered-text">Welcome back! Please sign in to your account</h3>
             <div className="form-group">
               <label htmlFor="email">Email</label>
@@ -36,7 +35,7 @@ export default function LoginForm() {
             </div>
 
             <OAuth />
-            
+
             <div className="form-group centered-text">
               Don't have an account? <Link to='/signup'>Sign up</Link>
             </div>

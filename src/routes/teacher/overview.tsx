@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom"
-import CourseCard from "../../components/CourseCard"
-import Header from "../../components/Header"
-import IconText from "../../components/IconText"
-import TestCard from "../../components/TestCard"
-import { courses, tests } from "../../utils/helpers"
+import CourseCard from "~/components/CourseCard"
+import Header from "~/components/Header"
+import IconText from "~/components/IconText"
+import TestCard from "~/components/TestCard"
+import { courses, tests } from "~/utils/helpers"
 
 export default function Overview() {
   return (
@@ -20,7 +20,7 @@ export default function Overview() {
       <div className="container flex-col f-gap-1">
         <section>
           <h3 className="">Courses</h3>
-          <div className="content bg-white course-grid">
+          <div className="content bg-sec course-grid">
             {courses.map(course => {
               return <CourseCard key={course.id} course={course} />
             })}
@@ -28,7 +28,7 @@ export default function Overview() {
         </section>
         <section className="drafts">
           <h3 className="">Drafts</h3>
-          <div className="content bg-white draft-grid">
+          <div className="content bg-sec draft-grid">
             {tests.filter(({ completed }) => !completed).map(test => {
               return <TestCard key={test.id} test={test} />
             })}

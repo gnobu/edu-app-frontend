@@ -1,7 +1,5 @@
-import React from 'react'
+import { Outlet } from "react-router-dom"
 
-export default function Drafts() {
-  return (
-    <div>Drafts</div>
-  )
+export default function DraftsLayout() {
+  return (<Outlet />)
 }

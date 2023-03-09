@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import OAuth from "../components/OAuth"
-import loginStyle from "../styles/login.module.css"
+import OAuth from "~/components/OAuth"
+import loginStyle from "~/styles/login.module.css"
 import signupImage from "/src/assets/images/signup-bg-mid.png"
 
 export default function signupForm() {
@@ -12,12 +12,11 @@ export default function signupForm() {
       </section>
       <section className={`${loginStyle.main}`}>
         <div className="container">
-          <h2 className="centered-text">
-            <Link to='/'>
-              Edu
-            </Link>
-          </h2>
-          <form action="">
+          <form action="" className="flex-col centered-flex f-gap-1">
+              <Link to='/' className='f-gap-p5 centered-flex'>
+                <img src={`/src/assets/icons/logo.svg`} alt="App logo" />
+                <span className="f-s-6 f-w-7">Edu</span>
+              </Link>
             <h3 className="centered-text">Create an account</h3>
             <div className="form-group">
               <label htmlFor="email">Full Name</label>
@@ -36,7 +35,7 @@ export default function signupForm() {
               <input className="form-element" type="password" name="confirmPassword" />
             </div>
             <div className="form-group">
-              <input className="form-element" type="submit" value={'Create account'} />
+              <input className="form-element w-100 bg-accent" type="submit" value={'Create account'} />
             </div>
 
             <OAuth />

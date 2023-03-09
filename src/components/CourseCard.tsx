@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
-import { THEMES } from "../utils/themes"
-import { Course } from "../utils/types"
+import { THEMES } from "~/utils/themes"
+import { Course } from "~/utils/types"
 
 export default function CourseCard({ course }: { course: Pick<Course, 'courseCode' | 'courseTitle' | 'tests' | 'theme'> }) {
     const testsCompleted = course.tests.filter((test) => test.completed).length
@@ -12,7 +12,7 @@ export default function CourseCard({ course }: { course: Pick<Course, 'courseCod
     }, [])
 
     return (
-        <article ref={courseCard} className="courseCard course-theme col-black bg-course-alpha flex-col f-gap-1">
+        <article ref={courseCard} className="courseCard course-theme col-pry bg-course-alpha flex-col f-gap-1">
             <div className="flex f-gap-1">
                 <div className="hex-icon centered-grid">
                     <span className="hex col-course">&#x2B22;</span>
