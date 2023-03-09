@@ -1,7 +1,7 @@
 import { useEffect, useRef } from "react"
 import { Link } from "react-router-dom"
-import { THEMES } from "../utils/themes"
-import { Test } from "../utils/types"
+import { THEMES } from "~/utils/themes"
+import { Test } from "~/utils/types"
 import IconText from "./IconText"
 
 export default function TestCard({ test }: { test: Test }) {

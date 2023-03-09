@@ -1,10 +1,10 @@
 import { useRef } from "react"
 import { Form, LoaderFunctionArgs, useLoaderData } from "react-router-dom"
-import Header from "../../../components/Header"
-import IconText from "../../../components/IconText"
-import QuestBox from "../../../components/QuestBox"
-import { getTest } from "../../../utils/helpers"
-import "/src/styles/draft.css"
+import Header from "~/components/Header"
+import IconText from "~/components/IconText"
+import QuestBox from "~/components/QuestBox"
+import { getTest } from "~/utils/helpers"
+import "~/styles/draft.css"
 
 export async function loader({ params }: LoaderFunctionArgs) {
     const draft = await getTest(params.draftId)

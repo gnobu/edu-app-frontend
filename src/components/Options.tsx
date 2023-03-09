@@ -1,4 +1,4 @@
-import '../styles/question.css'
+import '~/styles/question.css'
 
 export default function Options() {
     function handleselect(e: React.MouseEvent) {

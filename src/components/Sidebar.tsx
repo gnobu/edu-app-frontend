@@ -1,9 +1,9 @@
 import { useRef } from "react"
 import { Link, NavLink, useLocation } from "react-router-dom"
-import "../styles/dashboard.css"
+import "~/styles/dashboard.css"
 import IconText from "./IconText"
-import noAvatar from "../assets/images/no-avatar-2.svg"
-import useTheme from "../hooks/useTheme"
+import noAvatar from "~/assets/images/no-avatar-2.svg"
+import useTheme from "~/hooks/useTheme"
 
 export default function Sidebar() {
     const { theme, defaultTheme, setTheme } = useTheme()

@@ -1,7 +1,7 @@
-import { useState } from "react";
-import { Link, Outlet } from "react-router-dom";
-import Footer from "../components/Footer";
-import Header from "../components/Header";
+import { useState } from "react"
+import { Link, Outlet } from "react-router-dom"
+import Footer from "~/components/Footer"
+import Header from "~/components/Header"
 
 export type HeaderContext = { takeChildren: React.Dispatch<React.SetStateAction<JSX.Element | null>> }
 

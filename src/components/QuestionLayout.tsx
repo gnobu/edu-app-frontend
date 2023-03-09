@@ -1,11 +1,11 @@
-import '../styles/question.css'
 import { useNavigate, useOutletContext } from 'react-router-dom'
-import { HeaderContext } from '../routes/test'
 import { useEffect, useState } from 'react'
+import { HeaderContext } from '~/routes/test'
 import Options from './Options'
 import Modal from './Modal'
 import ButtonGroup from './ButtonGroup'
 import IconText from './IconText'
+import '~/styles/question.css'
 
 export default function QuestionLayout() {
     const [finished, setFinished] = useState<boolean>(false)

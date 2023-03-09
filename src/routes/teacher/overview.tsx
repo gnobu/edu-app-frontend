@@ -1,9 +1,9 @@
 import { useLoaderData } from "react-router-dom"
-import CourseCard from "../../components/CourseCard"
-import Header from "../../components/Header"
-import IconText from "../../components/IconText"
-import TestCard from "../../components/TestCard"
-import { courses, tests } from "../../utils/helpers"
+import CourseCard from "~/components/CourseCard"
+import Header from "~/components/Header"
+import IconText from "~/components/IconText"
+import TestCard from "~/components/TestCard"
+import { courses, tests } from "~/utils/helpers"
 
 export default function Overview() {
   return (

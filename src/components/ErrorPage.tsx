@@ -1,5 +1,5 @@
 import { useRouteError } from "react-router-dom"
-import { ErrorResponse } from "../utils/types"
+import { ErrorResponse } from "~/utils/types"
 
 export default function ErrorPage({ title, description }: { title?: string, description?: string }) {
   const error = useRouteError() as ErrorResponse

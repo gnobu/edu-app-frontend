@@ -1,6 +1,5 @@
-import { Link } from "react-router-dom"
-import QuestionLayout from "../../components/QuestionLayout"
-import "../../styles/question.css"
+import QuestionLayout from "~/components/QuestionLayout"
+import "~/styles/question.css"
 
 export default function TestPage() {
     let content =

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
-import { THEMES } from "../utils/themes"
-import { Course } from "../utils/types"
+import { THEMES } from "~/utils/themes"
+import { Course } from "~/utils/types"
 
 export default function CourseCard({ course }: { course: Pick<Course, 'courseCode' | 'courseTitle' | 'tests' | 'theme'> }) {
     const testsCompleted = course.tests.filter((test) => test.completed).length

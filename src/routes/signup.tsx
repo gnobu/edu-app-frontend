@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom"
-import OAuth from "../components/OAuth"
-import loginStyle from "../styles/login.module.css"
+import OAuth from "~/components/OAuth"
+import loginStyle from "~/styles/login.module.css"
 import signupImage from "/src/assets/images/signup-bg-mid.png"
 
 export default function signupForm() {

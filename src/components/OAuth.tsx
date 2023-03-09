@@ -1,5 +1,5 @@
-import googleSVG from "../assets/icons/google-svg.svg"
-import mcsSVG from "../assets/icons/microsoft-svg.svg"
+import googleSVG from "~/assets/icons/google-svg.svg"
+import mcsSVG from "~/assets/icons/microsoft-svg.svg"
 
 export default function OAuth() {
     return (

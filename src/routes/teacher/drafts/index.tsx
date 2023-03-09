@@ -1,8 +1,8 @@
 import { useLoaderData } from "react-router-dom"
-import Header from "../../../components/Header"
-import IconText from "../../../components/IconText"
-import TestCard from "../../../components/TestCard"
-import { getTests } from "../../../utils/helpers"
+import Header from "~/components/Header"
+import IconText from "~/components/IconText"
+import TestCard from "~/components/TestCard"
+import { getTests } from "~/utils/helpers"
 
 export const loader = async () => {
   const tests = await getTests()

@@ -1,10 +1,10 @@
-import "../styles/account.css"
-import Header from "../components/Header"
-import UserCard from "../components/UserCard"
-import studentSVG from "../assets/icons/ph_student.svg"
-import teacherSVG from "../assets/icons/ph_chalkboard-teacher.svg"
-import Footer from "../components/Footer"
 import { Link } from "react-router-dom"
+import Header from "~/components/Header"
+import UserCard from "~/components/UserCard"
+import studentSVG from "~/assets/icons/ph_student.svg"
+import teacherSVG from "~/assets/icons/ph_chalkboard-teacher.svg"
+import Footer from "~/components/Footer"
+import "~/styles/account.css"
 
 export default function AccountRoute() {
     return (

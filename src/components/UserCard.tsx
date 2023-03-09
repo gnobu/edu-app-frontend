@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import '../styles/account.css'
+import '~/styles/account.css'
 
 export default function UserCard({ iconSrc, userType }: { iconSrc: string, userType: "student" | "teacher" }) {
     return (
