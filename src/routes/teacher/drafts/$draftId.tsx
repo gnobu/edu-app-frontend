@@ -18,7 +18,8 @@ export default function Draft() {
     const { draft } = useLoaderData() as Awaited<ReturnType<typeof loader>>
 
     const optbar = useRef<HTMLElement>(null)
-    function toggleOptbar(){
+    function toggleOptbar(e:React.MouseEvent){
+        e.preventDefault()
         optbar.current?.toggleAttribute('aria-collapsed')
     }
     return (
@@ -31,11 +32,14 @@ export default function Draft() {
             </Header>
             <div className="f-gap-1 f-grow">
                 <section className="quest_col bg-sec flex-col f-al-center">
-                    <div className="quest_boxes scroll-y">
+                    <div className="quest_boxes scroll-y m-blk-4">
                         {[0, 1, 2, 3, 4].map(idx =>
                             <QuestBox key={idx} idx={idx + 1} />
                         )}
                     </div>
+                    <button title="new question" className="outline small col-tert">
+                        <IconText src="/src/assets/icons/add.svg#img"/>
+                    </button>
                     <button title="Delete question" className="outline m-blk-4 col-warn">Delete</button>
                 </section>
 

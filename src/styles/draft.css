@@ -17,7 +17,7 @@
 
 button.toggler {
     position: absolute;
-    bottom: 50%;
+    top: 31%;
     left: -16px;
     width: 32px;
     height: 32px;
@@ -32,7 +32,7 @@ button.toggler:hover {
 }
 
 .quest_boxes {
-    height: 580px;
+    height: 500px;
 }
 
 .quest_box {
