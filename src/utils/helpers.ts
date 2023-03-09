@@ -162,7 +162,7 @@ export const courses: Course[] = [
     },
 ]
 
-export function getCourses() {
+export async function getCourses() {
     return courses
 }
 
@@ -172,4 +172,17 @@ export async function getTests() {
 
 export async function getTest(id: string | undefined) {
     return tests.filter(test => test.id === id).at(0)
+}
+
+export async function getDrafts() {
+    return tests.filter(test => !test.completed)
+}
+
+export async function getDraft(id: string | undefined) {
+    const drafts = await getDrafts()
+    return drafts.filter(draft => draft.id === id).at(0)
+}
+
+export async function getCourseOptions() {
+    return courses.map(({ id, courseTitle }) => ({ id, courseTitle }))
 }
