@@ -1,34 +1,39 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
-export default function useTimer({ timeInMs, begin = false }: { timeInMs: number, begin: boolean }) {
-    // get the time in ms 
-    // return the formatted time
-    // when begin is true, start countdown and return new formatted time every second
+export default function useTimer({ timeInMs, setFinished, begin = false }: {
+    timeInMs: number,
+    setFinished: React.Dispatch<React.SetStateAction<boolean>>,
+    begin?: boolean
+}) {
+    // get the time in ms
+    const [timer, setTimer] = useState(timeInMs)
     useEffect(() => {
-        const formattedTime = getFormattedTime(timeInMs)
-    }, [])
+        // when begin is true, start countdown 
+        if (begin) {
+            const interval = setInterval(() => {
+                setTimer(prev => {
+                    // if timeup, stop timer and end test
+                    if (prev - 1000 <= 0) {
+                        clearInterval(interval)
+                        setFinished(true)
+                    }
+                    return (prev - 1000)
+                })
+            }, 1000);
+        }
+    }, [begin])
 
-    return
+    const [formattedTime, setFormattedTime] = useState(getFormattedTime(timer))
+    useEffect(() => {
+        // compute new formatted time every second
+        setFormattedTime(prev => getFormattedTime(timer))
+        // console.log(formattedTime)
+    }, [timer])
+
+    // return the formatted time
+    return { formattedTime }
 }
 
-const DIVISIONS: { amount: number, name: "hour" | "minute" | "second" }[] = [
-    { name: 'hour', amount: 3600 },
-    { name: 'minute', amount: 60 },
-    { name: 'second', amount: 1 },
-]
-
 function getFormattedTime(time: number) {
-    time /= 1000
-    const formattedTime = {
-        hour: 0,
-        minute: 0,
-        second: 0,
-    }
-    for (let { name, amount } of DIVISIONS) {
-        while (time >= amount) {
-            formattedTime[name] += 1
-            time -= amount
-        }
-    }
-    return formattedTime
+    return new Date(time).toISOString().substring(11, 19)
 }
