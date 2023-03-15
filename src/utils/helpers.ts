@@ -1,9 +1,21 @@
-import { Course, Test } from "./types"
+import { Course, Question, Test } from "./types"
 
 export const STAGES = ['REG', 'WAIT', 'START'] as const
 
 
-export const tests: Test[] = [
+const questions: Question[] = [
+    {
+        answerType: 'single',
+        config: 'manual',
+        question: 'The earth is flat',
+        options: [
+            { text: 'True', isCorrect: true },
+            { text: 'False', isCorrect: false }
+        ]
+    }
+]
+
+const tests: Test[] = [
     {
         id: '1',
         course: {
@@ -55,7 +67,7 @@ export const tests: Test[] = [
             theme: 'DARK',
         },
         testCode: '444444',
-        questions: [],
+        questions: questions,
         completed: false,
         createdAt: '2023-01-29T09:36:27.524+00:00',
         updatedAt: '2023-01-29T09:36:27.524+00:00',
@@ -132,7 +144,7 @@ export const tests: Test[] = [
     },
 ]
 
-export const courses: Course[] = [
+const courses: Course[] = [
     {
         id: '1',
         courseCode: 'MEE 414',
@@ -162,7 +174,7 @@ export const courses: Course[] = [
     },
 ]
 
-export function getCourses() {
+export async function getCourses() {
     return courses
 }
 
@@ -172,4 +184,17 @@ export async function getTests() {
 
 export async function getTest(id: string | undefined) {
     return tests.filter(test => test.id === id).at(0)
+}
+
+export async function getDrafts() {
+    return tests.filter(test => !test.completed)
+}
+
+export async function getDraft(id: string | undefined) {
+    const drafts = await getDrafts()
+    return drafts.filter(draft => draft.id === id).at(0)
+}
+
+export async function getCourseOptions() {
+    return courses.map(({ id, courseTitle }) => ({ id, courseTitle }))
 }

@@ -8,10 +8,10 @@ import TestLayout from './routes/test'
 import TestPage from './routes/test/$testId'
 import TestForm from './routes/test/index'
 import Dashboard from './routes/teacher'
-import Overview from './routes/teacher/overview'
+import Overview, {loader as overviewLoader} from './routes/teacher/overview'
 import LandingPage from './routes/LandingPage'
 import Calendar from './routes/teacher/calendar'
-import Courses from './routes/teacher/courses'
+import Courses, { loader as coursesLoader } from './routes/teacher/courses'
 import DraftsLayout from './routes/teacher/drafts'
 import Drafts, { loader as draftsLoader } from './routes/teacher/drafts/index'
 import Draft, { loader as draftLoader } from './routes/teacher/drafts/$draftId'
@@ -30,10 +30,10 @@ const router = createBrowserRouter(
       </Route>
       <Route path='teacher' element={<Dashboard />}>
         <Route errorElement={<ErrorPage />} >
-          <Route index element={<Overview />} />
-          <Route path='overview' element={<Overview />} />
+          <Route index loader={overviewLoader} element={<Overview />} />
+          <Route path='overview' loader={overviewLoader} element={<Overview />} />
           <Route path='calendar' element={<Calendar />} />
-          <Route path='courses' element={<Courses />} />
+          <Route path='courses' loader={coursesLoader} element={<Courses />} />
           <Route path='drafts' element={<DraftsLayout />}>
             <Route index loader={draftsLoader} element={<Drafts />} />
             <Route path=':draftId' loader={draftLoader} element={<Draft />} />

@@ -6,22 +6,27 @@ import Modal from './Modal'
 import ButtonGroup from './ButtonGroup'
 import IconText from './IconText'
 import '~/styles/question.css'
+import useTimer from '~/hooks/useTimer'
+import Timer from './Timer'
 
 export default function QuestionLayout() {
     const [finished, setFinished] = useState<boolean>(false)
     const [sendResult, setSendResult] = useState(false)
+    const [begin, setBegin] = useState(false)
+    const { formattedTime } = useTimer({ timeInMs: 5 * 1000, begin, setFinished })
 
     const { takeChildren } = useOutletContext<HeaderContext>()
     useEffect(() => {
         const headerContent = <>
-            <IconText src={'/src/assets/icons/timer.svg#img'} srcCls='desktop f-s-6'
-                element={<span className='timer f-s-5 f-w-6'>00:10:34</span>} />
+            <Timer timer={formattedTime} />
             <ButtonGroup>
                 <>
                     <button className='nav-button'>
                         <IconText src='/src/assets/icons/left.svg#img' srcCls='f-s-2' element={<span className='desktop'>Previous</span>} />
                     </button>
-                    <button className='nav-button'>
+                    <button
+                        onClick={() => setBegin(true)}
+                        className='nav-button'>
                         <IconText src='/src/assets/icons/right.svg#img' srcCls='f-s-2' element={<span className='desktop'>Next</span>} classNames='f-rev' />
                     </button>
                 </>
@@ -31,7 +36,7 @@ export default function QuestionLayout() {
         return () => {
             takeChildren(null)
         }
-    }, [])
+    }, [formattedTime])
 
     const navigate = useNavigate()
     function hanldeFinished() {

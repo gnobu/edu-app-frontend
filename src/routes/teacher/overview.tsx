@@ -3,9 +3,17 @@ import CourseCard from "~/components/CourseCard"
 import Header from "~/components/Header"
 import IconText from "~/components/IconText"
 import TestCard from "~/components/TestCard"
-import { courses, tests } from "~/utils/helpers"
+import { getCourses, getDrafts } from "~/utils/helpers"
+import { AwaitedReturn } from "~/utils/types"
+
+export const loader = async () => {
+  const drafts = await getDrafts()
+  const courses = await getCourses()
+  return { courses, drafts }
+}
 
 export default function Overview() {
+  const { courses, drafts } = useLoaderData() as AwaitedReturn<typeof loader>
   return (
     <>
       <Header>
@@ -29,8 +37,8 @@ export default function Overview() {
         <section className="drafts">
           <h3 className="">Drafts</h3>
           <div className="content bg-sec draft-grid">
-            {tests.filter(({ completed }) => !completed).map(test => {
-              return <TestCard key={test.id} test={test} />
+            {drafts.map(draft => {
+              return <TestCard key={draft.id} test={draft} />
             })}
           </div>
         </section>

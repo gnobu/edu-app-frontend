@@ -12,13 +12,25 @@ export interface ErrorResponse {
     statusText: string;
 }
 
-// export type LoaderResponse<T> = Awaited<ReturnType<T>>
+export type AwaitedReturn<T extends (...args: any) => any> = Awaited<ReturnType<T>>
+
+export type Option = {
+    text: string,
+    isCorrect: boolean
+}
+
+export type Question = {
+    answerType: 'single'|'multiple',
+    config: 'manual'|'generated',
+    question: string,
+    options: Option[]
+}
 
 export type Test = {
     id: string;
     course: Pick<Course, 'id' | 'courseCode' | 'courseTitle' | 'theme'>;
     testCode: string | number;
-    questions: unknown[];
+    questions: Question[];
     completed: boolean;
     createdAt: string;
     updatedAt: string;

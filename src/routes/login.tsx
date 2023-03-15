@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import OAuth from "~/components/OAuth"
 import loginStyle from "~/styles/login.module.css"
-import loginImage from "~/src/assets/images/login-bg-mid.png"
+import loginImage from "~/assets/images/login-bg-mid.png"
 
 export default function LoginForm() {
   return (
