@@ -27,15 +27,15 @@ export default function TestCard({ test }: { test: Test }) {
           <p className="bg-course-alpha badge f-w-5">Test code: {test.testCode}</p>
         </div>
         <div className="flex f-al-start">
-          <Link to={`/teacher/drafts/${test.id}`} className="button small ghost">
-            <IconText src="/src/assets/icons/edit-2.svg#img" />
+          <Link to={`/teacher/drafts/${test.id}`} className="button small ghost col-pry">
+            <IconText src="/src/assets/icons/edit-2.svg#img" size="xs" />
           </Link>
-          <button className="small ghost">
-            <IconText src="/src/assets/icons/trash.svg#img" />
+          <button className="small ghost col-warn">
+            <IconText src="/src/assets/icons/trash.svg#img" size="xs" />
           </button>
         </div>
       </div>
-      <div className="flex f-end">
+      <div className="f-gap-p5 f-end">
         <button className="ghost small col-accent">
           <IconText src="/src/assets/icons/add.svg#img" text="Add to calendar" size="xs" />
         </button>

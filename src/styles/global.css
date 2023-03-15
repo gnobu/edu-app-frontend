@@ -92,7 +92,7 @@ button,
 
 button:where(.small),
 .button:where(.small) {
-  padding: .5em 1em;
+  padding: .25em .5em;
   min-width: 30px;
   font-size: .75rem;
 }
@@ -232,7 +232,6 @@ textarea[readonly] {
 }
 
 label {
-  margin-bottom: .5rem;
   font-weight: 600;
 }
 
