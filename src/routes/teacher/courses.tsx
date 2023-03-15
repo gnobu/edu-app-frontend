@@ -1,9 +1,17 @@
+import { useLoaderData } from "react-router-dom"
 import CourseCard from "~/components/CourseCard"
 import Header from "~/components/Header"
 import IconText from "~/components/IconText"
-import { courses } from "~/utils/helpers"
+import { getCourses } from "~/utils/helpers"
+import { AwaitedReturn } from "~/utils/types"
+
+export async function loader() {
+  const courses = await getCourses()
+  return { courses }
+}
 
 export default function Courses() {
+  const { courses } = useLoaderData() as AwaitedReturn<typeof loader>
   return (
     <>
       <Header>

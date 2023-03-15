@@ -3,6 +3,7 @@ import Header from "~/components/Header"
 import IconText from "~/components/IconText"
 import TestCard from "~/components/TestCard"
 import { getDrafts } from "~/utils/helpers"
+import { AwaitedReturn } from "~/utils/types"
 
 export const loader = async () => {
   const drafts = await getDrafts()
@@ -10,7 +11,7 @@ export const loader = async () => {
 }
 
 export default function Drafts() {
-  const { drafts } = useLoaderData() as Awaited<ReturnType<typeof loader>>
+  const { drafts } = useLoaderData() as AwaitedReturn<typeof loader>
   return (
     <>
       <Header>

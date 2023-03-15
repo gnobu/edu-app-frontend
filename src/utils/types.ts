@@ -12,7 +12,7 @@ export interface ErrorResponse {
     statusText: string;
 }
 
-// export type LoaderResponse<T> = Awaited<ReturnType<T>>
+export type AwaitedReturn<T extends (...args: any) => any> = Awaited<ReturnType<T>>
 
 export type Option = {
     text: string,
